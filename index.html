@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14231d"><title>RasaRuang — Food Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">OPEN ORDER SETIAP HARI <b>•</b> PRE-ORDER TERSEDIA <b>•</b> PESAN MUDAH VIA WHATSAPP</div>
+<header><div class="container nav">
+<a class="logo" href="#">rasa<span>ruang.</span></a>
+<nav class="navlinks"><a href="#menu">Menu</a><a href="#preorder">Pre-order</a><a href="#cerita">Tentang</a></nav>
+<div class="navright"><a class="pill" href="#preorder">PO dibuka</a><button class="cartbtn" id="openCart" type="button">Keranjang <span class="count" id="cartCount">0</span></button></div>
+</div></header>
+<main>
+<section class="container hero">
+<div class="reveal"><span class="tag"><i class="dot"></i> GOOD FOOD, GOOD MOOD</span><h1>Rasa yang bikin<br><em>hari lebih baik.</em></h1><p>Temukan menu pilihan yang dibuat dengan bahan berkualitas. Mau pesan langsung atau ikut pre-order? Semua bisa kamu atur dari sini.</p><div class="heroactions"><a class="primary" href="#menu">Jelajahi menu ↗</a><a class="secondary" href="#preorder">Lihat menu PO</a></div></div>
+<div class="heroimage reveal"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=85" alt="Hidangan segar dan penuh warna"><div class="hero-badge">Freshly prepared <small>Disiapkan dengan sepenuh hati</small></div></div>
+</section>
+<div class="container trust"><div><b>✦</b> Bahan pilihan</div><div><b>◷</b> PO terjadwal</div><div><b>↗</b> Pesan langsung ke WhatsApp</div></div>
+
+<section class="container section" id="menu">
+<div class="sectionhead reveal"><div><div class="kicker">OUR SELECTION</div><h2>Menu pilihan</h2></div><p>Pilih kategori, atur jumlah, lalu tambahkan ke keranjang. Pesanan akan dirangkum sebelum dikirim ke WhatsApp.</p></div>
+<div class="menu-tools reveal"><label class="searchbox"><span>⌕</span><input id="menuSearch" type="search" placeholder="Cari menu favoritmu..." autocomplete="off" aria-label="Cari menu"></label><label class="sortbox"><span>Urutkan</span><select id="menuSort" aria-label="Urutkan menu"><option value="default">Rekomendasi</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option><option value="az">Nama A–Z</option></select></label></div>
+<div class="tabs" id="categoryTabs"><button class="tab active" data-category="Semua">Semua menu</button><button class="tab" data-category="Makanan">Makanan</button><button class="tab" data-category="Minuman">Minuman</button><button class="tab" data-category="Snack">Snack</button></div>
+<div class="products" id="products"></div>
+</section>
+
+<section class="container section" id="preorder">
+<div class="po-panel reveal"><div class="po-copy"><div class="kicker">LIMITED PRE-ORDER</div><h2>Menu PO, pesan dulu nikmati kemudian.</h2><p>Menu pre-order dibuat berdasarkan jadwal. Pilih produk PO, masukkan ke daftar PO, lalu checkout untuk mengirim rangkuman pesanan ke WhatsApp.</p><a class="primary" href="#poProducts">Pilih menu PO ↓</a></div><div class="po-list" id="poPreview"><div class="po-empty">Memuat daftar pre-order...</div></div></div>
+</section>
+<section class="container section" id="poProducts">
+<div class="sectionhead reveal"><div><div class="kicker">PRE-ORDER MENU</div><h2>Menu PO tersedia</h2></div><p>Menu khusus pre-order. Tambahkan ke daftar PO untuk menggabungkan pesanan dalam satu checkout.</p></div>
+<div class="products" id="poGrid"></div>
+</section>
+<section class="container section" id="cerita"><div class="about reveal"><div class="aboutvisual"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85" alt="Persiapan makanan di dapur"></div><div class="aboutcopy"><div class="kicker">OUR STORY</div><h2 style="font:800 clamp(29px,3.5vw,44px)/1.12 Manrope;letter-spacing:-1.8px">Sederhana dalam proses, istimewa dalam rasa.</h2><p>Kami ingin membuat pengalaman memesan makanan jadi lebih mudah. Pilih menu, tentukan jumlah, isi detail pesanan, dan lanjutkan percakapan dengan tim kami melalui WhatsApp.</p><div class="points"><div class="point">01 · Fresh<span>Disiapkan dengan teliti</span></div><div class="point">02 · Simple<span>Alur pesan praktis</span></div><div class="point">03 · Personal<span>Pesan bisa disesuaikan</span></div><div class="point">04 · Pre-order<span>Pesan sesuai jadwal</span></div></div></div></div></section>
+<section class="container section"><div class="cta reveal"><div><h2>Sudah tahu mau makan apa?</h2><p>Masukkan pilihanmu ke keranjang dan lanjutkan pesanan.</p></div><button class="primary" id="ctaCart" type="button">Buka keranjang ↗</button></div></section>
+</main>
+<footer><div class="container footrow"><a class="logo" href="#">rasa<span>ruang.</span></a><span>© <span id="year"></span> RasaRuang. Dibuat untuk pengalaman pesan yang mudah.</span></div></footer>
+
+<div class="drawerback" id="drawerBack" aria-hidden="true"><aside class="drawer" aria-label="Keranjang pesanan"><div class="drawerhead"><h3>Keranjangmu</h3><button class="close" id="closeCart" type="button" aria-label="Tutup">×</button></div><div class="tabs" style="margin-top:17px"><button class="tab active" id="regularTab" type="button">Menu reguler</button><button class="tab" id="poTab" type="button">Daftar PO</button></div><div id="cartRows" class="cartrows"></div><div class="total"><span>Total sementara</span><span id="cartTotal">Rp0</span></div><button class="checkout" id="checkoutBtn" type="button">Lanjut checkout →</button></aside></div>
+<div class="modalback" id="modalBack"><form class="modal" id="checkoutForm"><div class="modalhead"><h3>Detail pemesanan</h3><button class="close" id="closeModal" type="button">×</button></div><p class="modalhint" id="checkoutHint">Lengkapi data berikut. Rangkuman akan dibuka di WhatsApp untuk konfirmasi.</p><div class="field"><label for="customerName">Nama pemesan *</label><input id="customerName" name="name" required maxlength="60" placeholder="Nama kamu"></div><div class="field"><label for="customerPhone">Nomor WhatsApp (opsional)</label><input id="customerPhone" name="phone" inputmode="tel" maxlength="20" placeholder="08xxxxxxxxxx"></div><div class="field"><label for="pickupDate">Tanggal pengambilan / pengiriman</label><input id="pickupDate" name="date" type="date"></div><div class="field"><label for="customerNote">Catatan pesanan</label><textarea id="customerNote" name="note" maxlength="500" placeholder="Contoh: tidak pedas, alamat, jam pengambilan..."></textarea></div><button class="checkout send" type="submit">Kirim pesanan ke WhatsApp ↗</button></form></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div><button class="backtop" id="backTop" type="button" aria-label="Kembali ke atas">↑</button>
+<script src="js/script.js" defer></script>
+</body></html>
